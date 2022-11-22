@@ -1,0 +1,12 @@
+FROM node:16.17-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json tsconfig.json ./
+RUN npm install
+
+COPY source/ ./source
+RUN npm run build
+
+EXPOSE 8080
+CMD [ "node", "build/server.js" ]

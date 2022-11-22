@@ -4,8 +4,9 @@
   "description": "nodejs test",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon source/server.ts",
-    "build": "rm -rf build/ && prettier --write source/ && tsc"
+    "local": "nodemon source/server.ts",
+    "build": "npx tsc",
+    "start": "node build/server.js"
   },
   "keywords": [],
   "author": "lucas mufato",
